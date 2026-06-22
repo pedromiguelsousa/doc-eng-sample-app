@@ -12,6 +12,8 @@ import Feature from './storyblok/Feature';
 import Grid from './storyblok/Grid';
 import NavEntry from './storyblok/NavEntry';
 import NavSubmenu from './storyblok/NavSubmenu';
+import FooterEntry from './storyblok/FooterEntry';
+import FooterSubmenu from './storyblok/FooterSubmenu';
 
 storyblokInit({
 	accessToken: import.meta.env.STORYBLOK_DELIVERY_API_TOKEN,
@@ -31,6 +33,8 @@ storyblokInit({
 		grid: Grid,
 		nav_entry: NavEntry,
 		nav_submenu: NavSubmenu,
+		footer_entry: FooterEntry,
+		footer_submenu: FooterSubmenu,
 	},
 });
 const router = createBrowserRouter([
