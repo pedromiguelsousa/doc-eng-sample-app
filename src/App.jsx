@@ -4,16 +4,14 @@ import {
 	useStoryblokApi,
 } from '@storyblok/react';
 import { useParams, useLocation } from 'react-router';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { HSStaticMethods } from "preline/non-auto";
 import Navbar from './storyblok/Navbar';
 import Footer from './storyblok/Footer';
-
-import { HSStaticMethods } from "preline/non-auto";
 
 export default function App() {
 	const { '*': slug } = useParams();
 	const location = useLocation();
-
 	const [configData, setConfigData] = useState(null);
 
 	// header/footer loader
@@ -22,7 +20,6 @@ export default function App() {
 		async function loadConfig() {
 			const resp = await storyblokApi.get('cdn/stories/config', {
 				version: 'draft',
-				// resolve_links: 'url',
 			});
 			setConfigData(resp.data);
 		}
@@ -33,8 +30,6 @@ export default function App() {
 		version: 'draft',
 	});
 
-	// UI config — must run after the Navbar markup is in the DOM,
-	// so we depend on story.content (not just location.pathname).
 	useEffect(() => {
 		HSStaticMethods.autoInit();
 	}, [location.pathname, story?.content]);
