@@ -3,7 +3,7 @@ import NavSubmenu from './NavSubmenu';
 
 export default function Navbar({ config: configData }) {
 
-    const navBarEntries = configData?.story?.content?.nav_items || [];
+    const navbarEntries = configData?.story?.content?.nav_items || [];
 
     return (
         <header
@@ -40,7 +40,7 @@ export default function Navbar({ config: configData }) {
                     className="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:block"
                     aria-labelledby="hs-navbar-example-collapse" role="region">
                     <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-                        {navBarEntries.map((item) => {
+                        {navbarEntries.map((item) => {
                             if (item.items?.length > 0) {
                                 return <NavSubmenu key={item._uid} blok={item} topLevelNav={true} />;
                             } else {
