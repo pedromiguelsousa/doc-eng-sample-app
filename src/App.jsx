@@ -5,7 +5,7 @@ import {
 } from '@storyblok/react';
 import { useParams, useLocation } from 'react-router';
 import { useState, useEffect } from 'react';
-import NavBar from './storyblok/Navbar';
+import Navbar from './storyblok/Navbar';
 import Footer from './storyblok/Footer';
 
 import { HSStaticMethods } from "preline/non-auto";
@@ -44,7 +44,7 @@ export default function App() {
 	}
 	return (
 		<>
-			<NavBar config={configData} />
+			<Navbar config={configData} />
 			<StoryblokComponent blok={story.content} />
 			<Footer config={configData} />
 		</>
