@@ -2,7 +2,7 @@ import { storyblokEditable } from '@storyblok/react';
 
 export default function NavEntry({ blok, topLevelNav = false }) {
 
-    let url = (blok.link?.linktype == "story") ? `/${blok.link.cached_url}` : (blok.link.url || "#");
+    let url = (blok.link?.linktype == "story") ? `/${blok.link.cached_url}` : (blok.link?.url || "#");
     
     if (topLevelNav) {
         return (
