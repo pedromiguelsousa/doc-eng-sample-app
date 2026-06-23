@@ -16,8 +16,8 @@ export default function FooterSubmenu({ blok, topLevelNav = true }) {
             </div>
         );
     } else {
-        // currently not used in footer
-        // when implementing child submenus, change topLevelNav default value to false
+        // Currently not used in footer.
+        // When implementing nested footer submenus, change topLevelNav's default value to false.
         return null;
     }
 }
